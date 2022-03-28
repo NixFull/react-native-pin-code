@@ -61,6 +61,7 @@ export declare namespace PinCodeT {
         allowReset?: boolean;
         backSpace?: JSX.Element;
         lockIcon?: JSX.Element;
+        dotSelectedColor?: string;
     }
     interface TextOptions {
         enter?: {
@@ -100,6 +101,7 @@ export declare const DEFAULT: {
         disableLock: boolean;
         lockDuration: number;
         maxAttempt: number;
+        dotSelectedColor: string;
     };
     TextOptions: {
         enter: {

@@ -21,37 +21,38 @@ export const DEFAULT = {
         allowReset: true,
         disableLock: false,
         lockDuration: 600000,
-        maxAttempt: 10
+        maxAttempt: 10,
+        dotSelectedColor: "#D2D5DB",
     },
     TextOptions: {
         enter: {
-            title: 'Enter PIN',
-            subTitle: 'Enter {{pinLength}}-digit PIN to access.',
-            error: 'Wrong PIN! Try again.',
-            backSpace: 'Delete',
-            footerText: 'Forgot PIN?'
+            title: "Enter PIN",
+            subTitle: "Enter {{pinLength}}-digit PIN to access.",
+            error: "Wrong PIN! Try again.",
+            backSpace: "Delete",
+            footerText: "Forgot PIN?",
         },
         set: {
-            title: 'Set up a new PIN',
-            subTitle: 'Enter {{pinLength}} digits.',
-            repeat: 'Enter new PIN again.',
+            title: "Set up a new PIN",
+            subTitle: "Enter {{pinLength}} digits.",
+            repeat: "Enter new PIN again.",
             error: `PIN don't match. Start the process again.`,
-            cancel: 'Cancel'
+            cancel: "Cancel",
         },
         locked: {
-            title: 'Locked',
+            title: "Locked",
             subTitle: `Your have entered wrong PIN {{maxAttempt}} times.\nThe app is temporarily locked in {{lockDuration}}.`,
-            lockedText: 'Locked',
+            lockedText: "Locked",
         },
         reset: {
-            title: 'Forgot PIN?',
+            title: "Forgot PIN?",
             subTitle: `Remove the PIN may wipe out the app data and settings.`,
-            resetButton: 'Remove',
-            confirm: 'Are you sure you want remove the PIN?',
-            confirmButton: 'Confirm',
-            backButton: 'Back'
-        }
-    }
+            resetButton: "Remove",
+            confirm: "Are you sure you want remove the PIN?",
+            confirmButton: "Confirm",
+            backButton: "Back",
+        },
+    },
 };
-export const PIN_KEY = '@pincode';
+export const PIN_KEY = "@pincode";
 //# sourceMappingURL=types.js.map

@@ -251,6 +251,7 @@ const PinCode = ({
           pin={pin}
           pinLength={curOptions.pinLength || DEFAULT.Options.pinLength}
           style={styles?.enter?.pinContainer}
+          dotSelectedColor={curOptions.dotSelectedColor}
         />
         <View
           style={[
@@ -335,6 +336,7 @@ const PinCode = ({
               value={"0"}
               disabled={buttonsDisabled}
               style={buttonStyle}
+              textStyle={styles?.enter?.buttonText}
               onPress={onPinButtonPressed}
             />
             <PinButton
@@ -488,10 +490,12 @@ const Pin = ({
   pin,
   pinLength,
   style,
+  dotSelectedColor,
 }: {
   pin: string;
   pinLength: number;
   style?: ViewStyle | ViewStyle[];
+  dotSelectedColor?: string;
 }) => {
   const items: JSX.Element[] = [];
   for (let i = 1; i <= pinLength; i++) {
@@ -499,12 +503,14 @@ const Pin = ({
       <Text
         key={"pin_" + i}
         style={{
-          width: pin.length >= i ? 12 : 6,
-          height: pin.length >= i ? 12 : 6,
-          borderRadius: pin.length >= i ? 6 : 3,
-          backgroundColor: "white",
+          width: 18,
+          height: 18,
+          borderRadius: 9,
+          backgroundColor: pin.length >= i ? dotSelectedColor : "white",
           overflow: "hidden",
           marginHorizontal: 10,
+          borderWidth: 1,
+          borderColor: pin.length >= i ? "white" : "#D2D5DB",
         }}
       />
     );
