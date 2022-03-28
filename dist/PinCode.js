@@ -315,7 +315,16 @@ const PinCode = ({ visible = false, mode = PinCodeT.Modes.Enter, options, textOp
 const Pin = ({ pin, pinLength, style, dotSelectedColor, }) => {
     const items = [];
     for (let i = 1; i <= pinLength; i++) {
-        items.push(<Text key={"pin_" + i} style={{
+        items.push(<View style={pin.length >= i
+            ? {
+                shadowColor: dotSelectedColor,
+                shadowOffset: { width: 0, height: 0 },
+                shadowOpacity: 0.3,
+                shadowRadius: 8,
+                elevation: 10,
+            }
+            : null}>
+        <Text key={"pin_" + i} style={{
             width: 18,
             height: 18,
             borderRadius: 9,
@@ -324,7 +333,8 @@ const Pin = ({ pin, pinLength, style, dotSelectedColor, }) => {
             marginHorizontal: 10,
             borderWidth: 1,
             borderColor: pin.length >= i ? "white" : "#D2D5DB",
-        }}/>);
+        }}/>
+      </View>);
     }
     return <View style={[defaultStyles.pinContainer, style]}>{items}</View>;
 };
