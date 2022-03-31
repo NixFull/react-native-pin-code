@@ -64,6 +64,7 @@ export namespace PinCodeT {
     allowReset?: boolean;
     backSpace?: JSX.Element;
     lockIcon?: JSX.Element;
+    tips?: JSX.Element;
     dotSelectedColor?: string;
   }
 

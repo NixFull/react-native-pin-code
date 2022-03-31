@@ -195,6 +195,7 @@ const PinCode = ({ visible = false, mode = PinCodeT.Modes.Enter, options, textOp
             </>)}
         </View>
         <Pin pin={pin} pinLength={curOptions.pinLength || DEFAULT.Options.pinLength} style={(_r = styles === null || styles === void 0 ? void 0 : styles.enter) === null || _r === void 0 ? void 0 : _r.pinContainer} dotSelectedColor={curOptions.dotSelectedColor}/>
+        {options === null || options === void 0 ? void 0 : options.tips}
         <View style={[
             defaultStyles.buttonContainer,
             (_s = styles === null || styles === void 0 ? void 0 : styles.enter) === null || _s === void 0 ? void 0 : _s.buttonContainer,
@@ -315,7 +316,7 @@ const PinCode = ({ visible = false, mode = PinCodeT.Modes.Enter, options, textOp
 const Pin = ({ pin, pinLength, style, dotSelectedColor, }) => {
     const items = [];
     for (let i = 1; i <= pinLength; i++) {
-        items.push(<View style={pin.length >= i
+        items.push(<View key={"" + i} style={pin.length >= i
             ? {
                 shadowColor: dotSelectedColor,
                 shadowOffset: { width: 0, height: 0 },

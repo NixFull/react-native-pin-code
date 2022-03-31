@@ -253,6 +253,7 @@ const PinCode = ({
           style={styles?.enter?.pinContainer}
           dotSelectedColor={curOptions.dotSelectedColor}
         />
+        {options?.tips}
         <View
           style={[
             defaultStyles.buttonContainer,
@@ -501,6 +502,7 @@ const Pin = ({
   for (let i = 1; i <= pinLength; i++) {
     items.push(
       <View
+        key={"" + i}
         style={
           pin.length >= i
             ? {
